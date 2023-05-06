@@ -1,6 +1,6 @@
-name: Jacky Zhao
+name: Caoayu
 enableToc: true
-openToc: false
+openToc: true
 enableLinkPreview: true
 enableLatex: true
 enableCodeBlockTitle: true
@@ -9,21 +9,20 @@ enableCallouts: true
 enableSPA: true
 enableFooter: true
 enableContextualBacklinks: true
-enableRecentNotes: false
+enableRecentNotes: true
 enableGitHubEdit: true
 enableMermaid: true
-GitHubLink: https://github.com/jackyzha0/quartz/tree/hugo/content
+GitHubLink: https://github.com/ayuayue/quartz/tree/hugo/content
 search:
   enableSemanticSearch: false
   operandApiKey: "REPLACE-WITH-YOUR-OPERAND-API-KEY"
   operandIndexId: "REPLACE-WITH-YOUR-OPERAND-INDEX-ID"
 description:
-  Host your second brain and digital garden for free. Quartz features extremely fast full-text search,
-  Wikilink support, backlinks, local graph, tags, and link previews.
+  Caoyu - https://blog.caoayu.top.
 page_title:
-  "🪴 Quartz 3.3"
+  "🪴 Caoayu"
 links:
-  - link_name: Twitter
-    link: https://twitter.com/_jzhao
+  - link_name: Email
+    link: mailto:1401262639@qq.com
   - link_name: GitHub
-    link: https://github.com/jackyzha0
+    link: https://github.com/ayuayue

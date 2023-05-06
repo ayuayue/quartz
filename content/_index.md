@@ -1,27 +1,34 @@
 ---
-title: 🪴 Quartz 3.3
-enableToc: false
+aliases: 
+tags: []
+draft: false
+categories: []
+date: 2023-05-07T00:44:21+08:00
+lastmod: 2023-05-07T01:04:58+08:00
+title: 首页
 ---
 
-Host your second brain and [digital garden](https://jzhao.xyz/posts/networked-thought) for free. Quartz features
 
-1. Extremely fast natural-language [[notes/search]]
-2. Customizable and hackable design based on [Hugo](https://gohugo.io/)
-3. Automatically generated backlinks, link previews, and local graph
-4. Built-in [[notes/CJK + Latex Support (测试) | CJK + Latex Support]] and [[notes/callouts | Admonition-style callouts]]
-5. Support for both Markdown Links and Wikilinks
+# 索引目录
 
-Check out some of the [amazing gardens that community members](notes/showcase.md) have published with Quartz or read about [why I made Quartz](notes/philosophy.md) to begin with.
 
-## Get Started
-> 📚 Step 1: [Setup your own digital garden using Quartz](notes/setup.md)
 
-Returning user? Figure out how to [[notes/updating|update]] your existing Quartz garden.
+-----
 
-If you prefer browsing the contents of this site through a list instead of a graph, you see a list of all [setup-related notes](/tags/setup).
+# 说明
 
-### Troubleshooting
-- 🚧 [Troubleshooting and FAQ](notes/troubleshooting.md)
-- 🐛 [Submit an Issue](https://github.com/jackyzha0/quartz/issues)
-- 👀 [Discord Community](https://discord.gg/cRFFHYye7t)
+免费托管你的第二个大脑和[数字花园](https://jzhao.xyz/posts/networked-thought)。
 
+`Quartz` 的特性：
+
+1. 极快的自然语言[[notes/search]]
+
+2. 基于[Hugo](https://gohugo.io/)的可定制和可破解设计
+
+3. 自动生成的反向链接，链接预览，和本地图形
+
+4. 内置 [[notes/CJK + Latex Support (测试)|CJK + Latex Support (测试)]] 和 [[notes/callouts | 警告式callouts]]
+
+5. 支持Markdown链接和维基链接
+
+----
