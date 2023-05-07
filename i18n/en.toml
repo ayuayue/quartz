@@ -62,4 +62,4 @@ other = "Search for something..."
 other = "Table of Contents"
 
 [copyright]
-other = "Made by {{ .name }} using <a href=\"https://github.com/jackyzha0/quartz\">Quartz</a>, © {{ .year }}"
+other = "Made by {{ .name }} using <a href=\"https://github.com/ayuayue/quartz\">Quartz</a>, © {{ .year }}  <br> <a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a>"

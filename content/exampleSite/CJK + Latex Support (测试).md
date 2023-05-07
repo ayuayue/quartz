@@ -1,5 +1,11 @@
 ---
-title: "CJK + Latex Support (测试)"
+aliases: 
+tags: []
+draft: false
+categories: []
+date: 2023-05-07T01:24:56+08:00
+lastmod: 2023-05-07T16:48:54+08:00
+title: CJK + Latex Support (测试)
 ---
 
 ## Chinese, Japanese, Korean Support
@@ -37,4 +43,4 @@ a & b & c
 $$
 
 ## RTL
-More information on configuring RTL languages like Arabic in the [config](notes/config.md) page.
+More information on configuring RTL languages like Arabic in the [config](config.md) page.

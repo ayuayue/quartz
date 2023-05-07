@@ -1,33 +1,62 @@
-baseURL = "https://quartz.jzhao.xyz/"
-languageCode = "zh-cn"
-relativeURLs = false
+baseURL = "https://blog.caoayu.top/"
+defaultContentLanguage = 'zh-cn'
+enableRobotsTXT = true
+relativeURLs = true
 disablePathToLower = true
-ignoreFiles = [
-    "/content/templates/*",
-    "/content/private/*",
-]
+ignoreFiles = ["/content/templates/*", "/content/private/*"]
 summaryLength = 20
 paginate = 10
 enableGitInfo = false
 
+[sitemap]
+changefreq = "weekly"
+priority = 0.5
+filename = "sitemap.xml"
+
+[parmas]
+comment = true
+
+[params.page.comment]
+[params.page.comment.utterances]
+enable = true
+# owner/repo
+repo = "ayuayue/blogtalk"
+issueTerm = ""
+label = ""
+lightTheme = "github-light"
+darkTheme = "github-dark"
+
+[params.cdn]
+# CDN data file name, disabled by default
+# ["jsdelivr.yml"]
+# located in "themes/LoveIt/assets/data/cdn/" directory
+# you can store your own data files in the same path under your project:
+# "assets/data/cdn/"
+# CDN 数据文件名称, 默认不启用
+# ["jsdelivr.yml"]
+# 位于 "themes/LoveIt/assets/data/cdn/" 目录
+# 可以在你的项目下相同路径存放你自己的数据文件:
+# "assets/data/cdn/"
+data = "jsdelivr.yml"
+
 [markup]
-    [markup.tableOfContents]
-        endLevel = 3
-        ordered = true
-        startLevel = 2
-    [markup.highlight]
-        noClasses = false
-        anchorLineNos = false
-        codeFences = true
-        guessSyntax = true
-        hl_Lines = ""
-        lineAnchors = ""
-        lineNoStart = 1
-        lineNos = true
-        lineNumbersInTable = true
-        style = "dracula"
-    [frontmatter]
-        lastmod = ["lastmod", ":git", "date", "publishDate"]
-        publishDate = ["publishDate", "date"]
-    [markup.goldmark.renderer]
-        unsafe = true
+[markup.tableOfContents]
+endLevel = 6
+ordered = true
+startLevel = 1
+[markup.highlight]
+noClasses = false
+anchorLineNos = false
+codeFences = true
+guessSyntax = true
+hl_Lines = ""
+lineAnchors = ""
+lineNoStart = 1
+lineNos = true
+lineNumbersInTable = true
+style = "dracula"
+[frontmatter]
+lastmod = ["lastmod", ":git", "date", "publishDate"]
+publishDate = ["publishDate", "date"]
+[markup.goldmark.renderer]
+unsafe = true

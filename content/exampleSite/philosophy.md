@@ -1,5 +1,11 @@
 ---
-title: "Quartz Philosophy"
+aliases: 
+tags: []
+draft: false
+categories: []
+date: 2023-05-07T01:24:56+08:00
+lastmod: 2023-05-07T16:49:04+08:00
+title: philosophy
 ---
 
 > “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming

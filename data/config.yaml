@@ -1,28 +1,33 @@
 name: Caoayu
 enableToc: true
-openToc: true
+openToc: false
 enableLinkPreview: true
 enableLatex: true
 enableCodeBlockTitle: true
 enableCodeBlockCopy: true
 enableCallouts: true
-enableSPA: true
+enableSPA: false
 enableFooter: true
 enableContextualBacklinks: true
 enableRecentNotes: true
-enableGitHubEdit: true
+enableGitHubEdit: false
 enableMermaid: true
 GitHubLink: https://github.com/ayuayue/quartz/tree/hugo/content
 search:
   enableSemanticSearch: false
   operandApiKey: "REPLACE-WITH-YOUR-OPERAND-API-KEY"
   operandIndexId: "REPLACE-WITH-YOUR-OPERAND-INDEX-ID"
-description:
-  Caoyu - https://blog.caoayu.top.
-page_title:
-  "🪴 Caoayu"
+description: Caoyu - https://blog.caoayu.top.
+page_title: "🪴 hello,I'm caoayu"
 links:
   - link_name: Email
     link: mailto:1401262639@qq.com
   - link_name: GitHub
     link: https://github.com/ayuayue
+  - link_name: Telegram
+    link: https://t.me/caoayu
+
+comment:
+  enable: true 
+  utterances:
+    enable: true

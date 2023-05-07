@@ -1,5 +1,10 @@
 ---
-title: "Configuration"
+aliases: 
+draft: false
+categories: []
+date: 2023-05-07T01:24:56+08:00
+lastmod: 2023-05-07T16:48:56+08:00
+title: config
 tags:
 - setup
 weight: 0
@@ -207,10 +212,10 @@ For example, the structure of the home page can be edited through `/layouts/inde
 
 More info about partials on [Hugo's website.](https://gohugo.io/templates/partials/)
 
-Still having problems? Checkout our [FAQ and Troubleshooting guide](notes/troubleshooting.md).
+Still having problems? Checkout our [FAQ and Troubleshooting guide](troubleshooting.md).
 
 ## Language Support
-[CJK + Latex Support (测试)](notes/CJK%20+%20Latex%20Support%20(测试).md) comes out of the box with Quartz.
+[CJK + Latex Support (测试)](CJK%20+%20Latex%20Support%20(测试).md) comes out of the box with Quartz.
 
 Want to support languages that read from right-to-left (like Arabic)? Hugo (and by proxy, Quartz) supports this natively.
 

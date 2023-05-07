@@ -1,5 +1,11 @@
 ---
-title: "Ignoring Notes"
+aliases: 
+tags: []
+draft: false
+categories: []
+date: 2023-05-07T01:24:56+08:00
+lastmod: 2023-05-07T16:49:02+08:00
+title: ignore notes
 ---
 
 ### Quartz Ignore
