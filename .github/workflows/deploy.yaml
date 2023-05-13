@@ -30,6 +30,8 @@ jobs:
         run: |
           git checkout -b master
           hugo --minify
+          git config --global user.email "1401262639@qq.com"
+          git config --global user.name "ayuayue"
           git add .
           git commit -m 'fixed changes'
           git push origin master
