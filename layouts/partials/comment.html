@@ -1,6 +1,7 @@
 {{- $comment := .Site.Data.config.comment | default dict -}}
 {{- $commentConfig := dict -}}
 {{- if $comment.enable -}}
+<br>
     <div id="comments">
         {{- /* utterances Comment System */ -}}
         {{- $utterances := $comment.utterances | default dict -}}
