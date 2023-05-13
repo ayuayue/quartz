@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+
+
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta
+    name="description"
+    content="Obsidian Or Typora 为什么选择 obsidan 而不是 typora？ obsidian 支持更多的功能，包括全局图谱、双链、强大的搜索整理功能、以及丰富的生态（官方内置以及社区插件数不胜数）。
+更重要的是免费，可本地化使用。但是对于同步及发布功能是需要购买服务的，如果有条件还是建议支持一下官方的。
+怎么与 Hugo 兼容及搭配？ 因为之前就是使用 Hugo &#43; Typora 进行文章编写及发布的，现在换到 Obsidian 可能会有不同。首先就是 Hugo 目前还无法原生的支持解析双链格式，但是这各功能又是 Obsidian 比较核心的功能。目前有不少的解决方案，我选择的是使用 [[."
+  />
+  <meta property="og:title" content="obsidian 与 hugo 的配合食用">
+  <meta property="og:description" content="Obsidian Or Typora 为什么选择 obsidan 而不是 typora？ obsidian 支持更多的功能，包括全局图谱、双链、强大的搜索整理功能、以及丰富的生态（官方内置以及社区插件数不胜数）。
+更重要的是免费，可本地化使用。但是对于同步及发布功能是需要购买服务的，如果有条件还是建议支持一下官方的。
+怎么与 Hugo 兼容及搭配？ 因为之前就是使用 Hugo &#43; Typora 进行文章编写及发布的，现在换到 Obsidian 可能会有不同。首先就是 Hugo 目前还无法原生的支持解析双链格式，但是这各功能又是 Obsidian 比较核心的功能。目前有不少的解决方案，我选择的是使用 [[.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://blog.caoayu.top/icon.png">
+  <meta property="og:url" content="https://blog.caoayu.top/notes/obsidian-hugo/obsidian-hugo/">
+  <meta property="og:width" content="200">
+  <meta property="og:height" content="200">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="obsidian 与 hugo 的配合食用" />
+  <meta name="twitter:description" content="Obsidian Or Typora 为什么选择 obsidan 而不是 typora？ obsidian 支持更多的功能，包括全局图谱、双链、强大的搜索整理功能、以及丰富的生态（官方内置以及社区插件数不胜数）。
+更重要的是免费，可本地化使用。但是对于同步及发布功能是需要购买服务的，如果有条件还是建议支持一下官方的。
+怎么与 Hugo 兼容及搭配？ 因为之前就是使用 Hugo &#43; Typora 进行文章编写及发布的，现在换到 Obsidian 可能会有不同。首先就是 Hugo 目前还无法原生的支持解析双链格式，但是这各功能又是 Obsidian 比较核心的功能。目前有不少的解决方案，我选择的是使用 [[." />
+  <meta name="twitter:image" content="https://blog.caoayu.top/icon.png">
+  
+
+  <title>
+    obsidian 与 hugo 的配合食用
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  
+  
+  
+  
+  
+  <link rel="shortcut icon" type="image/png"  href="https://blog.caoayu.top//icon.png" />
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <link href="https://blog.caoayu.top/styles.8a42fb21cbf1cd2ae28f56f984424e89.min.css" rel="stylesheet" />
+
+  
+  <link href="https://blog.caoayu.top/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css" rel="stylesheet" id="theme-link">
+
+   
+  
+  
+  
+  
+  <script src="https://blog.caoayu.top/js/darkmode.064c80fb0d89ca99cb3f95cc3634b6df.min.js"></script>
+  
+  
+  
+  <script src="https://blog.caoayu.top/js/util.3f3685d4e827eeb13137fa92c301b5cf.min.js"></script>
+  
+  
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"
+        integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx"
+        crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js"
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
+        crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js"
+        integrity="sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A"
+        crossorigin="anonymous"></script>
+
+
+  
+  
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.2.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.2.1"></script>
+  
+  <script defer src="https://blog.caoayu.top/js/popover.e3c928823ea5d5218b92d80e9cd19f40.min.js"></script>
+
+  
+  
+  
+  <script defer src="https://blog.caoayu.top/js/code-title.d6525fa48597ed29631fab15192407e2.min.js"></script>
+  
+
+  
+  
+  <script defer src="https://blog.caoayu.top/js/clipboard.3ce3710d38377077f1cee5228144b8a8.min.js"></script>
+  
+
+  
+  
+  <script defer src="https://blog.caoayu.top/js/callouts.e83135249ba7df7bb9912c90a91a55c6.min.js"></script>
+  
+
+  
+   
+  <script>
+    const SEARCH_ENABLED =  false 
+    const LATEX_ENABLED =  true 
+    const PRODUCTION =  true 
+    const BASE_URL = "https://blog.caoayu.top/"
+    const fetchData = Promise.all([
+          fetch("https:\/\/blog.caoayu.top\/indices\/linkIndex.c0d08776f7c7b2acd7cc2cdf672ab5fd.min.json")
+            .then(data => data.json())
+            .then(data => ({
+              index: data.index,
+              links: data.links,
+            })),
+          fetch("https:\/\/blog.caoayu.top\/indices\/contentIndex.3912e5d39a5d1228d40d31fddff2dc93.min.json")
+            .then(data => data.json()),
+        ])
+        .then(([{index, links}, content]) => ({
+          index,
+          links,
+          content,
+        }))
+
+      const render = () => {
+      
+
+      const siteBaseURL = new URL(BASE_URL);
+      const pathBase = siteBaseURL.pathname;
+      const pathWindow = window.location.pathname;
+      const isHome = pathBase == pathWindow;
+
+      addCopyButtons();
+      
+
+      
+
+      addCollapsibleCallouts();
+      
+
+      
+      initPopover(
+        "https://blog.caoayu.top",
+         true 
+      )
+      
+
+      
+      const footer = document.getElementById("footer")
+      if (footer) {
+        const container = document.getElementById("graph-container")
+        
+        if (!container) return requestAnimationFrame(render)
+        
+        container.textContent = ""
+
+        const drawGlobal = isHome &&  false ;
+        drawGraph(
+            "https://blog.caoayu.top",
+            drawGlobal,
+            [{"/moc":"#4388cc"}],
+            drawGlobal ? {"centerForce":1,"depth":-1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.5,"linkDistance":1,"opacityScale":3,"repelForce":1,"scale":1.4} : {"centerForce":1,"depth":1,"enableDrag":true,"enableLegend":false,"enableZoom":true,"fontSize":0.6,"linkDistance":1,"opacityScale":3,"repelForce":2,"scale":1.2}
+          );
+
+        }
+      
+
+      
+        var els = document.getElementsByClassName("mermaid");
+        if (els.length > 0) {
+          import('https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs').then(
+            (obj) => {
+              
+              
+              obj.default.init();
+            }
+          )
+        }
+      
+      
+      
+      function clickHandler(evt) {
+        const target = evt.target 
+        const classNames = target.className.split(" ")
+        const broken = classNames.includes("broken")
+        const internal = classNames.includes("internal-link")
+        plausible("Link Click", {
+          props: {
+            href: target.href,
+            broken,
+            internal,
+            graph: false,
+          }
+        })
+      }
+
+      const links = document.querySelectorAll("a")
+      for (link of links) {
+        if (link.className.includes("root-title")) {
+          link.addEventListener('click', clickHandler, {once: true})
+        }
+      }
+    }
+
+    const init = (doc = document) => {
+      
+      addCopyButtons();
+      
+
+      addTitleToCodeBlocks();
+      renderMathInElement(doc.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+        ],
+        macros: {
+          '’': "'"
+        },
+        throwOnError : false
+      });
+      
+    };
+  </script>
+  
+  <script>
+    window.Million = {
+      navigate: (url) => (window.location.href = url),
+      prefetch: () => {},
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      init()
+      render()
+    })
+  </script>
+  
+  
+  <script defer data-domain="blog.caoayu.top" src="https://plausible.io/js/script.js"></script>
+  <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+</head>
+
+
+<body>
+<div id="search-container">
+  <div id="search-space">
+    <input autocomplete="off" id="search-bar" name="search" type="text" aria-label="搜索"
+      placeholder="进行搜索......" dir="">
+    <div id="results-container">
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"
+  integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin="anonymous" defer></script>
+
+<script defer src="https://blog.caoayu.top/js/full-text-search.cc0284dc74ffd43585e5227c0138681e.min.js"></script>
+
+
+
+<div class="singlePage">
+    
+    <header>
+    
+    <h1 id="page-title"><a class="root-title" href="https://blog.caoayu.top/">🪴 hello,I&#39;m caoayu</a></h1>
+    <div class="spacer"></div>
+    <div id="search-icon">
+      <p>搜索</p>
+      <svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">搜索图标</title><desc id="desc">打开搜索图标</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg>
+    </div>
+    <div class='darkmode'>
+    <input class='toggle' id='darkmode-toggle' type='checkbox' tabindex="-1">
+    <label id="toggle-label-light" for='darkmode-toggle' tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35;" xml:space="preserve">
+            <title>明亮模式</title>
+            <path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z" />
+        </svg>
+    </label>
+    <label id="toggle-label-dark" for='darkmode-toggle' tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'" xml:space="preserve">
+            <title>黑暗模式</title>
+            <path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z" />
+        </svg>
+    </label>
+</div>
+</header>
+
+
+    <article>
+      <h1>obsidian 与 hugo 的配合食用</h1>
+      <p class="meta">
+        最后更新于 
+2023-05-03
+
+ 
+          
+
+      </p>
+      <ul class="tags">
+          
+      </ul>
+      
+
+<aside class="mainTOC">
+    <details >
+        <summary>目录</summary>
+        <nav id="TableOfContents">
+  <ol>
+    <li><a href="#obsidian-or-typora">Obsidian Or Typora</a>
+      <ol>
+        <li><a href="#为什么选择-obsidan-而不是-typora">为什么选择 obsidan 而不是 typora？</a></li>
+        <li><a href="#怎么与-hugo-兼容及搭配">怎么与 Hugo 兼容及搭配？</a></li>
+        <li><a href="#问题及解决方案">问题及解决方案</a>
+          <ol>
+            <li><a href="#图片路径问题">图片路径问题</a></li>
+            <li><a href="#路径问题会显示灰色的链接">路径问题会显示灰色的链接</a></li>
+            <li><a href="#关于嵌入内容">关于嵌入内容</a></li>
+            <li><a href="#加入评论">加入评论</a></li>
+            <li><a href="#使用-vercel-进行部署并配置域名">使用 vercel 进行部署并配置域名</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+    </details>
+</aside>
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+      
+      
+      
+      
+        
+        
+        
+          
+          
+          
+        
+        
+      
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+  
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+<a href="#obsidian-or-typora"><h1 id="obsidian-or-typora"><span class="hanchor" ariaLabel="Anchor"># </span>Obsidian Or Typora</h1></a>
+<a href="#为什么选择-obsidan-而不是-typora"><h2 id="为什么选择-obsidan-而不是-typora"><span class="hanchor" ariaLabel="Anchor"># </span>为什么选择 obsidan 而不是 typora？</h2></a>
+<p>obsidian 支持更多的功能，包括全局图谱、双链、强大的搜索整理功能、以及丰富的生态（官方内置以及社区插件数不胜数）。</p>
+<p>更重要的是免费，可本地化使用。但是对于同步及发布功能是需要购买服务的，如果有条件还是建议支持一下官方的。</p>
+<a href="#怎么与-hugo-兼容及搭配"><h2 id="怎么与-hugo-兼容及搭配"><span class="hanchor" ariaLabel="Anchor"># </span>怎么与 Hugo 兼容及搭配？</h2></a>
+<p>因为之前就是使用 Hugo + Typora 进行文章编写及发布的，现在换到 Obsidian 可能会有不同。首先就是 Hugo 目前还无法原生的支持解析双链格式，但是这各功能又是 Obsidian 比较核心的功能。目前有不少的解决方案，我选择的是使用 <a href="../../../exampleSite/setup" rel="noopener" class="internal-link" data-src="../../../exampleSite/setup">setup</a> 这个项目，是兼容 Hugo 的，基本和 Hugo 的使用方法一致，只是他们对双链进行了处理并且加入了一些新的功能，详细可以查看这个项目或者 fork 下来进行 DIY。</p>
+<p>当然，现在这个站点你所看到的效果就是这个项目带来的，当然这只是再编写这个文档的期间，相信 Hugo 或者 Obsidian 社区肯定会有越来越好的方案。那个时候将会是”开箱即用“的。</p>
+<p><img src="../../../images/image-20230507175056062.png" width="auto" /></p>
+<a href="#问题及解决方案"><h2 id="问题及解决方案"><span class="hanchor" ariaLabel="Anchor"># </span>问题及解决方案</h2></a>
+<a href="#图片路径问题"><h3 id="图片路径问题"><span class="hanchor" ariaLabel="Anchor"># </span>图片路径问题</h3></a>
+<p>如果是以博客项目为根目录打开的 Obsidian 仓库，那么使用 <a href="../../../exampleSite/setup" rel="noopener" class="internal-link" data-src="../../../exampleSite/setup">setup</a> 中的配置应该是没问题的，配置成绝对路径，这种方式比较明了，博客的内容不会跟其他项目掺杂，就是要多配置一份，如果有插件什么的都要配置，但是还好我们可以把 .obsidan 目录直接复制过去重新启动就好了，非常方便。平时的 Git 同步也推荐把 .obsidian 添加到版本控制中。**注意：需要把 content 作为仓库根目录，而不是整个 quartz 项目 **</p>
+<p>如果是以子模块放置到一个其他的笔记目录中，也就是要把所有的东西都放在一个 Obsidian 仓库中，那样的话渲染图片路径会有问题，可以 fork 项目自己进行调整，或者再 content 中创建 images 目录，然后文章中的图片都使用相对路径，经过测试只能放在 content 目录下才可以正常加载。</p>
+<p>如果想放在某篇笔记下的目录是不行的，或者可以放图床，图床的问题是如果你不给每个图片进行标明文件表示的是什么，很容易因为图片过多而变乱，或者图床不稳定导致解析失败。</p>
+<a href="#路径问题会显示灰色的链接"><h3 id="路径问题会显示灰色的链接"><span class="hanchor" ariaLabel="Anchor"># </span>路径问题会显示灰色的链接</h3></a>
+<p>如果路径存在问题，或者使用原生的 markdown 格式，如果找不到链接文件，会显示灰色链接并且无法跳转，就像 
+
+
+
+
+
+<a
+  
+  rel="noopener" class="internal-link broken"
+  data-src="www.baid.com">百度</a> 这样。</p>
+<p>如果是外部的链接，需要使用 https:// 或 http:// 带上协议，如果没有协议，默认会在当前项目中进行查找。下面这种是正常的显示效果 📁 
+<a href="https://github.com/ayuayue/quartz" rel="noopener">Quartz Repository</a></p>
+<a href="#关于嵌入内容"><h3 id="关于嵌入内容"><span class="hanchor" ariaLabel="Anchor"># </span>关于嵌入内容</h3></a>
+<p>比如 obsidian 中使用 <a href="../../../others/services" rel="noopener" class="internal-link" data-src="../../../others/services">services</a>
+这种方式是不支持的，不支持任何的 ![[]]，或者使用 # ^ 的写法。</p>
+<a href="#加入评论"><h3 id="加入评论"><span class="hanchor" ariaLabel="Anchor"># </span>加入评论</h3></a>
+<p>当前仅支持 utterances 的方式。</p>
+<ol>
+<li>在 data/config.yaml 中配置 comment 是否开启，然后配置 utterances 是否开启。</li>
+<li>在 layouts/partials/comment.html 中配置仓库的信息，如</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">utterancesConfig</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">repo</span><span class="o">:</span> <span class="s1">&#39;ayuayue/blogtalk&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">issueTerm</span><span class="o">:</span> <span class="s1">&#39;pathname&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">lightTheme</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">darkTheme</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><a href="#使用-vercel-进行部署并配置域名"><h3 id="使用-vercel-进行部署并配置域名"><span class="hanchor" ariaLabel="Anchor"># </span>使用 vercel 进行部署并配置域名</h3></a>
+
+
+    </article><div id="comments"><div id="utterances" class="comment"></div><noscript>
+            Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">utterances</a>.
+        </noscript></div><script>
+    var utterancesConfig = {
+        repo: 'ayuayue/blogtalk',
+        issueTerm: 'pathname',
+        label: '',
+        lightTheme: '',
+        darkTheme: ''
+    }
+    var script = document.createElement('script');
+          script.src = 'https://utteranc.es/client.js';
+          script.type = 'text/javascript';
+          script.setAttribute('repo', utterancesConfig.repo);
+          script.setAttribute('issue-term', utterancesConfig.issueTerm);
+          if (utterancesConfig.label) script.setAttribute('label', utterancesConfig.label);
+          script.setAttribute('theme', this.isDark ? utterancesConfig.darkTheme : utterancesConfig.lightTheme);
+          script.crossOrigin = 'anonymous';
+          script.async = true;
+          document.getElementById('utterances').appendChild(script);
+</script>
+    
+
+<hr/>
+
+
+<div class="page-end" id="footer">
+    <div class="backlinks-container">
+        <h3>反向链接</h3>
+<ul class="backlinks">
+    
+    
+    
+    
+    
+    
+    
+    <li>
+      没有找到反向链接
+    </li>
+    
+</ul>
+
+    </div>
+    <div>
+        <script
+  src="https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js"
+  integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI="
+  crossorigin="anonymous"
+></script>
+<h3>互动图</h3>
+<div id="graph-container"></div>
+<style>
+  :root {
+    --g-node: var(--secondary);
+    --g-node-active: var(--primary);
+    --g-node-inactive: var(--visited);
+    --g-link: var(--outlinegray);
+    --g-link-active: #5a7282;
+  }
+</style>
+
+<script src="https://blog.caoayu.top/js/graph.203ed96e190b7ffeeeccf19cea480adf.js"></script>
+
+    </div>
+</div>
+
+
+
+
+
+
+<div id="contact_buttons">
+    <footer>
+        
+        
+        <p><a rel='license' href='http://creativecommons.org/licenses/by-nc-sa/4.0/'><img alt='知识共享许可协议' style='border-width:0' src='https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png' /></a><br />本作品采用<a rel='license' href='http://creativecommons.org/licenses/by-nc-sa/4.0/'>知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。</p>
+        <p>由 Caoayu 用 <a href="https://github.com/ayuayue/quartz">Quartz</a> 创造, © 2023 <br> <a href='https://beian.miit.gov.cn' target='_blank'>豫ICP备19012822号-3</a></p>
+        <ul>
+            
+            <li><a href="https://blog.caoayu.top/">主页</a></li>
+            <li><a href="mailto:1401262639@qq.com">Email</a></li><li><a href="https://github.com/ayuayue">GitHub</a></li><li><a href="https://t.me/caoayu">Telegram</a></li></ul>
+    </footer>
+</div>
+
+
+</div>
+</body>
+</html>

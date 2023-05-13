@@ -1,0 +1,29 @@
+{
+  "index": {
+    "links": {
+      "index": [
+        {
+          "source": "index",
+          "target": "/../%E9%87%8D%E6%96%B0%E5%BC%80%E5%A7%8B-%E4%BB%8E-Hugo-%E5%87%BA%E5%8F%91",
+          "text": "重新开始-从 Hugo 出发"
+        }
+      ]
+    },
+    "backlinks": {
+      "/../%E9%87%8D%E6%96%B0%E5%BC%80%E5%A7%8B-%E4%BB%8E-Hugo-%E5%87%BA%E5%8F%91": [
+        {
+          "source": "index",
+          "target": "/../%E9%87%8D%E6%96%B0%E5%BC%80%E5%A7%8B-%E4%BB%8E-Hugo-%E5%87%BA%E5%8F%91",
+          "text": "重新开始-从 Hugo 出发"
+        }
+      ]
+    }
+  },
+  "links": [
+    {
+      "source": "index",
+      "target": "/../%E9%87%8D%E6%96%B0%E5%BC%80%E5%A7%8B-%E4%BB%8E-Hugo-%E5%87%BA%E5%8F%91",
+      "text": "重新开始-从 Hugo 出发"
+    }
+  ]
+}
